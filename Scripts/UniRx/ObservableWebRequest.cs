@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if EXTENSIONS_UNIRX
+using System;
 using System.Net;
 using System.Threading;
 using System.Collections;
@@ -276,3 +277,4 @@ namespace UniRx
         }
     }
 }
+#endif
