@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
-#if EXTENSIONS_UNIRX
-using UniRx;
-#endif
+﻿using UnityEngine;
 #if EXTENSIONS_DOTWEEN
 using DG.Tweening;
 #endif
 
 namespace UnityExtensions
 {
-    public static class AudioSourceExtensions
+    public static partial class AudioSourceExtensions
     {
         public static bool Play(this AudioSource self, AudioClip clip, float volume)
         {
@@ -58,16 +53,6 @@ namespace UnityExtensions
             self.Play();
             self.FadeIn(volume, duration);
             return true;
-        }
-#endif
-
-#if EXTENSIONS_UNIRX
-        public static IObservable<Unit> PlayAsObservable(this AudioSource self, AudioClip clip, float volume)
-        {
-            if (self.Play(clip, volume))
-                return Observable.Timer(TimeSpan.FromSeconds(clip.length)).AsUnitObservable();
-            else
-                return Observable.Throw<Unit>(new ArgumentException());
         }
 #endif
 

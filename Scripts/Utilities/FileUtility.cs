@@ -5,7 +5,7 @@ using System.Collections;
 
 namespace UnityExtensions
 {
-    public static partial class FileUtility
+    public static class FileUtility
     {
         private static string PersistentDataPath = Application.persistentDataPath;
 
@@ -58,7 +58,7 @@ namespace UnityExtensions
             return File.Exists(GetFullPath(path));
         }
 
-        private static string GetFullPath(string path)
+        public static string GetFullPath(string path)
         {
             return Path.Combine(PersistentDataPath, path);
         }
