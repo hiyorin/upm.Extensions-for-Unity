@@ -2,7 +2,7 @@
 package manager
 
 
-## Install
+# Install
 Specify repository URL git://github.com/hiyorin/upm.Extensions-for-Unity.git with key com.hiyorin.extensions into Packages/manifest.json like below.
 ```javascript
 {
@@ -15,7 +15,7 @@ Specify repository URL git://github.com/hiyorin/upm.Extensions-for-Unity.git wit
 ```
 
 
-## Usage
+# Usage
 ```cs
 using UnityExtensions;
 ```
